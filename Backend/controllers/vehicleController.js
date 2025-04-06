@@ -1,19 +1,26 @@
-const VehicleDAO = require('../dao/VehicleDAO');
+const express = require('express');
+const router = express.Router();
+const Veiculo = require('../models/Vehicle');
 
-exports.getVehicles = async (req, res) => {
+// GET - listar todos os veículos
+router.get('/', async (req, res) => {
     try {
-        const vehicles = await VehicleDAO.getAllVehicles();
-        res.json(vehicles);
-    } catch (error) {
-        res.status(500).json({ error: 'Erro ao buscar veículos' });
+        const veiculos = await Veiculo.find();
+        res.json(veiculos);
+    } catch (err) {
+        res.status(500).json({ erro: err.message });
     }
-};
+});
 
-exports.createVehicle = async (req, res) => {
+// POST - cadastrar novo veículo
+router.post('/', async (req, res) => {
     try {
-        const newVehicle = await VehicleDAO.createVehicle(req.body);
-        res.status(201).json(newVehicle);
-    } catch (error) {
-        res.status(500).json({ error: 'Erro ao criar veículo' });
+        const novo = new Veiculo(req.body);
+        await novo.save();
+        res.status(201).json(novo);
+    } catch (err) {
+        res.status(400).json({ erro: err.message });
     }
-};
+});
+
+module.exports = router;

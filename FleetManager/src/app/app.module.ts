@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ListaVeiculosComponent } from './lista-veiculos/lista-veiculos.component';
 import { ReservaVeiculosComponent } from './reserva-veiculos/reserva-veiculos.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ReservaVeiculosComponent } from './reserva-veiculos/reserva-veiculos.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,62 @@
-<p>lista-veiculos works!</p>
+<div class="container">
+    <div class="navegacao">
+      <button (click)="alterarData(-1)">◀</button>
+      <span>{{ dataFormatada }}</span>
+      <button (click)="alterarData(1)">▶</button>
+    </div>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>Reservar</th>
+          <th>Modelo</th>
+          <th>Placa</th>
+          <th>Última Manutenção</th>
+          <th>Quilometragem</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let veiculo of veiculos; let i = index">
+          <td>
+            <input
+              type="checkbox"
+              [(ngModel)]="veiculoSelecionado[i]"
+              [disabled]="veiculo.status !== 'Liberado'"
+            />
+          </td>
+          <td>{{ veiculo.modelo }}</td>
+          <td>{{ veiculo.placa }}</td>
+          <td>{{ veiculo.manutencao }}</td>
+          <td>{{ veiculo.quilometragem }} km</td>
+          <td>{{ veiculo.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div class="botoes-acao">
+      <button (click)="reservarSelecionados()">Reservar Selecionados</button>
+    </div>
+  </div>
+
+<div class="modal-backdrop" *ngIf="mostrarModal">
+    <div class="modal">
+      <h2>Agendar Reserva</h2>
+      
+      <label>
+        Início
+        <input type="datetime-local" [(ngModel)]="dataInicioReserva" />
+      </label>
+      
+      <label>
+        Fim
+        <input type="datetime-local" [(ngModel)]="dataFimReserva" />
+      </label>
+  
+      <div class="modal-buttons">
+        <button (click)="confirmarReserva()">Confirmar</button>
+        <button class="cancelar" (click)="fecharModal()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+  
