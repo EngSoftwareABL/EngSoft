@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { ListaVeiculosComponent } from './lista-veiculos/lista-veiculos.component';
 import { ReservaVeiculosComponent } from './reserva-veiculos/reserva-veiculos.component';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
