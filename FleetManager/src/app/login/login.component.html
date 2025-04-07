@@ -1,18 +1,20 @@
-<div class="container">
-    <div class="login">
-        <h1>Fleet Manager</h1>
-        <div class="loginsys">
-            <form [formGroup]="loginForm">
-                <div class="id">
-                    <label for="typeLogin">Login</label><br>
-                    <input type="text" id="typeLogin" formControlName="email">
-                </div><br>
-                <div class="pass">
-                    <label for="typePass">Senha</label><br>
-                    <input type="number" id="typePass" formControlName="password">
-                </div><br>
-                <button (click)="login()">Entrar</button>
-            </form>
+<body>
+    <div class="container">
+        <div class="login">
+            <h1>Fleet Manager</h1>
+            <div class="loginsys">
+                <form [formGroup]="loginForm">
+                    <div class="id">
+                        <label class="loginTxt" for="typeLogin">Login</label><br>
+                        <input type="text" id="typeLogin" formControlName="email">
+                    </div><br>
+                    <div class="pass">
+                        <label class="passTxt" for="typePass">Senha</label><br>
+                        <input type="number" id="typePass" formControlName="password">
+                    </div><br>
+                    <button (click)="login()">Entrar</button>
+                </form>
+            </div>
         </div>
     </div>
-  </div>
+</body>
