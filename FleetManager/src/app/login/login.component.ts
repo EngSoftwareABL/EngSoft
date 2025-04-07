@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
   loginForm: FormGroup;
@@ -21,7 +21,7 @@ export class LoginComponent {
   login() {
 
     if(this.loginForm.value['email'] == "admin" && this.loginForm.value['password'] == "123") {
-      this.router.navigate(["/app"])
+      this.router.navigate(['/app'])
     } else {
       this.invalidUser = true;
     }
