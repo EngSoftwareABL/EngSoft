@@ -3,17 +3,20 @@
         <div class="login">
             <h1>Fleet Manager</h1>
             <div class="loginsys">
-                <form [formGroup]="loginForm">
+                <form [formGroup]="loginForm" (ngSubmit)="login()">
                     <div class="id">
                         <label class="loginTxt" for="typeLogin">Login</label><br>
                         <input type="text" id="typeLogin" formControlName="email">
                     </div><br>
                     <div class="pass">
                         <label class="passTxt" for="typePass">Senha</label><br>
-                        <input type="number" id="typePass" formControlName="password">
+                        <input type="password" id="typePass" formControlName="password">
                     </div><br>
-                    <button (click)="login()">Entrar</button>
+                    <button type="submit">Entrar</button>
                 </form>
+                <div *ngIf="invalidUser" class="error">
+                    Usuário ou senha inválidos.
+                </div>
             </div>
         </div>
     </div>
