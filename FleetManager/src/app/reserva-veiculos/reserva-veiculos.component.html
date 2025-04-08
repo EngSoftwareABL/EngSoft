@@ -3,4 +3,20 @@
     <a routerLink="/lista">Lista</a>
     <a routerLink="/reserva">Reserva</a>
 </header>
-<p>reserva-veiculos works!</p>
+<h2>Fazer Reserva</h2>
+<form (ngSubmit)="fazerReserva()">
+  <label>Veículo ID:</label>
+  <input [(ngModel)]="idVeiculo" name="idVeiculo" required /><br />
+
+  <label>Usuário ID:</label>
+  <input [(ngModel)]="idUsuario" name="idUsuario" required /><br />
+
+  <label>Data Início:</label>
+  <input type="date" [(ngModel)]="dataInicio" name="dataInicio" required /><br />
+
+  <label>Data Fim:</label>
+  <input type="date" [(ngModel)]="dataFim" name="dataFim" required /><br />
+
+  <button type="submit">Reservar</button>
+</form>
+

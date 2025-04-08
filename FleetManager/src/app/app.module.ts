@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ListaVeiculosComponent } from './lista-veiculos/lista-veiculos.component';
-import { ReservaVeiculosComponent } from './reserva-veiculos/reserva-veiculos.component';
+import { ReservaVeiculoComponent } from './reserva-veiculos/reserva-veiculos.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,7 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     HomeComponent,
     ListaVeiculosComponent,
-    ReservaVeiculosComponent
+    ReservaVeiculoComponent
   ],
   imports: [
     BrowserModule,
