@@ -15,6 +15,7 @@ public class Reservation {
     private Date dataInicio;
     private Date dataFim;
 
+    //getters e setters
     public String getId() {
         return id;
     }

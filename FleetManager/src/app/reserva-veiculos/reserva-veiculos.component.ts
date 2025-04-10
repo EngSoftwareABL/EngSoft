@@ -8,7 +8,7 @@ import { ReservaService } from './reserva.service';
 })
 export class ReservaVeiculoComponent {
   idVeiculo: string = '';
-  idUsuario: string = ''; // você pode pegar isso do login futuramente
+  idUsuario: string = ''; 
   dataInicio: string = '';
   dataFim: string = '';
 
