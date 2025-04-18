@@ -11,6 +11,7 @@ export class ReservaVeiculoComponent {
   idUsuario: string = ''; 
   dataInicio: string = '';
   dataFim: string = '';
+  tipoUso: string = '';
 
   constructor(private reservaService: ReservaService) {}
 
@@ -39,5 +40,6 @@ export class ReservaVeiculoComponent {
     this.idUsuario = '';
     this.dataInicio = '';
     this.dataFim = '';
+    this.tipoUso = '';
   }
 }

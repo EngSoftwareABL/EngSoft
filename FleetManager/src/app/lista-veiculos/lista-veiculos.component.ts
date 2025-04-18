@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VeiculoService, Veiculo } from './veiculo.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista-veiculos',
@@ -16,7 +17,9 @@ export class ListaVeiculosComponent implements OnInit {
   dataInicioReserva = '';
   dataFimReserva = '';
 
-  constructor(private veiculoService: VeiculoService) {}
+  constructor(
+    private veiculoService: VeiculoService,
+    private router: Router) {}
 
   ngOnInit(): void {
     this.carregarVeiculos();
@@ -52,10 +55,13 @@ export class ListaVeiculosComponent implements OnInit {
     this.veiculoSelecionado = this.veiculosDoDia.map(() => false);
   }
 
-  confirmarReserva(): void {
+  listaReserva(): void {
     // Apenas um placeholder por enquanto
-    alert('Reserva confirmada (simulada).');
-    this.fecharModal();
+    this.router.navigate(['/reserva'])
+  }
+
+  confirmarReserva():void{
+    console.log("Reservou fi")
   }
   
   fecharModal(): void {
@@ -63,6 +69,4 @@ export class ListaVeiculosComponent implements OnInit {
     this.dataInicioReserva = '';
     this.dataFimReserva = '';
   }
-
-  // os métodos de reserva ficam aqui futuramente
 }

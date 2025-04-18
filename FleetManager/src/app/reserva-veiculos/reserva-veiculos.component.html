@@ -5,11 +5,18 @@
 </header>
 <h2>Fazer Reserva</h2>
 <form (ngSubmit)="fazerReserva()">
-  <label>Veículo ID:</label>
-  <input [(ngModel)]="idVeiculo" name="idVeiculo" required /><br />
+  <label>Veículo ID:</label> <!--Trocar por dropdown list na prox sprint para facilitar a seleção-->
+  <input type="text" [(ngModel)]="idVeiculo" name="idVeiculo" required /><br />
 
-  <label>Usuário ID:</label>
-  <input [(ngModel)]="idUsuario" name="idUsuario" required /><br />
+  <label>Usuário ID:</label> <!--Tentar trazer direto do login para facilitar na próx sprint-->
+  <input type="text" [(ngModel)]="idUsuario" name="idUsuario" required /><br />
+
+  <label for="uso">Tipo de uso</label> <!--Integrar com o backend - ainda nessa sprint-->
+  <input list="tipoUso" [(ngModel)]="tipoUso" name="tipoUso" id="uso">
+  <datalist id="tipoUso">
+    <option value="Overnight">
+    <option value="Teste">
+  </datalist>
 
   <label>Data Início:</label>
   <input type="date" [(ngModel)]="dataInicio" name="dataInicio" required /><br />
