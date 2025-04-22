@@ -20,7 +20,8 @@ export class ReservaVeiculoComponent {
       idVeiculo: this.idVeiculo,
       idUsuario: this.idUsuario,
       dataInicio: new Date(this.dataInicio),
-      dataFim: new Date(this.dataFim)
+      dataFim: new Date(this.dataFim),
+      tipoUso: this.tipoUso //+ implementando tipo de uso, como metodo post
     };
 
     this.reservaService.criarReserva(reserva).subscribe({

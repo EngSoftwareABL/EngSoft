@@ -7,6 +7,7 @@ export interface Reserva {
   idVeiculo: string;
   dataInicio: Date;
   dataFim: Date;
+  tipoUso: string; //+ implementando tipo de uso, como metodo post
 }
 
 @Injectable({
