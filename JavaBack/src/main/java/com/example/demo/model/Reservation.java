@@ -14,6 +14,7 @@ public class Reservation {
     private String idVeiculo;
     private Date dataInicio;
     private Date dataFim;
+    private String tipoUso;
 
     //getters e setters
     public String getId() {
