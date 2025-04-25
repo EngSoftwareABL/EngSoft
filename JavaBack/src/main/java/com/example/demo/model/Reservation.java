@@ -47,7 +47,6 @@ public class Reservation {
     public void setDataFim(Date dataFim) {
         this.dataFim = dataFim;
     }
-    private String tipoUso;
 
     public String getTipoUso() {
     return tipoUso;
