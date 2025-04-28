@@ -23,6 +23,17 @@ public class ReservationController {
 
     @PostMapping
     public Reservation createReserva(@RequestBody Reservation reserva) {
-        return reservationRepository.save(reserva);
-    }
+        
+        Reservation savedReserva = reservationRepository.save(reserva); // ++ salva a reserva
+    
+        
+        Vehicle veiculo = vehicleRepository.findById(reserva.getIdVeiculo()).orElse(null); // ++ busca veh pelo ID
+    
+        if (veiculo != null) {  // ++ mudar status para 'R' quando acha o ID
+            veiculo.setStatus('R'); // ++ status 'R' = Reservado
+            vehicleRepository.save(veiculo); // ++ salva a atualização
+        }
+    
+        return savedReserva;
+    } 
 }
