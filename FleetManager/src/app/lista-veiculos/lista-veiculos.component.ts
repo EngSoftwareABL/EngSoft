@@ -69,4 +69,10 @@ export class ListaVeiculosComponent implements OnInit {
     this.dataInicioReserva = '';
     this.dataFimReserva = '';
   }
+
+  voltarParaHoje(): void {
+    this.dataAtual = new Date();
+    this.filtrarVeiculosPorData();
+  }
+  
 }

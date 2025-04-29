@@ -1,63 +1,73 @@
-<header>
-  <a routerLink="/app">Home</a>
-  <a routerLink="/lista">Lista</a>
-  <a routerLink="/reserva">Reserva</a>
+<header class="header">
+  <nav class="nav-links">
+    <a routerLink="/app">Home</a>
+    <a routerLink="/lista">Lista</a>
+    <a routerLink="/reserva">Reserva</a>
+  </nav>
 </header>
 
-<div class="container">
-  <div class="navegacao">
-    <button (click)="alterarData(-1)">◀</button>
-    <span>{{ dataFormatada }}</span>
-    <button (click)="alterarData(1)">▶</button>
+<main class="container">
+  <section class="navegacao">
+    <button class="acao" (click)="alterarData(-1)">◀</button>
+    <span class="data">{{ dataFormatada }}</span>
+    <button class="acao" (click)="alterarData(1)">▶</button>
+    <button class="acao voltar-hoje" (click)="voltarParaHoje()">Hoje</button>
+  </section>
+
+  <section class="tabela-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Reservar</th>
+          <th>Modelo</th>
+          <th>Placa</th>
+          <th>Última Manutenção</th>
+          <th>Quilometragem</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let veiculo of veiculosDoDia; let i = index">
+          <td>
+            <input
+              type="checkbox"
+              [(ngModel)]="veiculoSelecionado[i]"
+              [disabled]="veiculo.status !== 'Liberado'"
+            />
+          </td>
+          <td>{{ veiculo.modelo }}</td>
+          <td>{{ veiculo.placa }}</td>
+          <td>{{ veiculo.manut }}</td>
+          <td>{{ veiculo.km }} km</td>
+          <td>{{ veiculo.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="botoes-acao">
+    <button routerLink="/reserva" class="reserva">Reserva</button>
   </div>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Reservar</th>
-        <th>Modelo</th>
-        <th>Placa</th>
-        <th>Última Manutenção</th>
-        <th>Quilometragem</th>
-        <th>Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let veiculo of veiculosDoDia; let i = index">
-        <td>
-          <input
-            type="checkbox"
-            [(ngModel)]="veiculoSelecionado[i]"
-            [disabled]="veiculo.status !== 'Liberado'"
-          />
-        </td>
-        <td>{{ veiculo.modelo }}</td>
-        <td>{{ veiculo.placa }}</td>
-        <td>{{ veiculo.manut }}</td>
-        <td>{{ veiculo.km }} km</td>
-        <td>{{ veiculo.status }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <!-- Modal de Agendamento -->
+  <div class="modal-backdrop" *ngIf="mostrarModal">
+    <div class="modal">
+      <h2>Agendar Reserva</h2>
 
-<!-- Modal de Agendamento -->
-<div class="modal-backdrop" *ngIf="mostrarModal">
-  <div class="modal">
-    <h2>Agendar Reserva</h2>
+      <div class="input-group">
+        <label for="inicio">Início</label>
+        <input id="inicio" type="datetime-local" [(ngModel)]="dataInicioReserva" />
+      </div>
 
-    <label>
-      Início
-      <input type="datetime-local" [(ngModel)]="dataInicioReserva" />
-    </label>
+      <div class="input-group">
+        <label for="fim">Fim</label>
+        <input id="fim" type="datetime-local" [(ngModel)]="dataFimReserva" />
+      </div>
 
-    <label>
-      Fim
-      <input type="datetime-local" [(ngModel)]="dataFimReserva" />
-    </label>
-
-    <div class="modal-buttons">
-      <button (click)="confirmarReserva()">Confirmar</button>
-      <button class="cancelar" (click)="fecharModal()">Cancelar</button>
-    </div> <!-- Colocar botão para retornar ao dia atual (facilitar navegação)-->
+      <div class="modal-buttons">
+        <button (click)="confirmarReserva()">Confirmar</button>
+        <button class="cancelar" (click)="fecharModal()">Cancelar</button>
+      </div>
+    </div>
   </div>
-</div>
+</main>

@@ -1,131 +1,185 @@
+/* Cabeçalho */
+header.header {
+  background-color: #000;
+  padding: 15px 30px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Conteúdo Principal */
 .container {
-    width: 80%;
-    margin: auto;
-    text-align: center;
-  }
-  
-  .navegacao {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 10px;
-    background: #ccc;
-    border-radius: 5px;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-  }
-  
-  th, td {
-    border: 1px solid #000;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  th {
-    background: #ddd;
-    font-weight: bold;
-  }
-  .acao {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-  }
+  width: 90%;
+  max-width: 1200px;
+  margin: 30px auto;
+  text-align: center;
+}
 
-  .botoes-acao {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .botoes-acao button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #060a07; /* verde sucesso */
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
-  }
-  
-  .botoes-acao button:hover {
-    background-color: #6d726e;
-  }
+/* Navegação */
+.navegacao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+  background: #ccc;
+  border-radius: 8px;
+  flex-wrap: wrap;
+}
 
-  .modal-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modal {
-    background: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    width: 300px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  }
-  
-  .modal input[type="datetime-local"] {
-    margin-top: 10px;
-    padding: 8px;
-    width: 100%;
-  }
-  
-  .modal-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-  
-  .modal-buttons button {
-    padding: 8px 16px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  .modal-buttons button:first-child {
-    background-color: #28a745;
-    color: #fff;
-  }
-  
-  .modal-buttons .cancelar {
-    background-color: #dc3545;
-    color: white;
-  }
-  
+.data {
+  font-weight: bold;
+  font-size: 18px;
+}
 
-    /* Cabeçalho */
-    header {
-      background-color: #000;
-      padding: 15px 30px;
-      display: flex;
-      gap: 30px;
-    }
-    
-    header a {
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-    }
-    
-    header a:hover {
-      text-decoration: underline;
-    }
-  
+button.acao {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+/* Botão voltar para hoje */
+.voltar-hoje {
+  font-size: 16px;
+  padding: 5px 10px;
+  border: 1px solid #000;
+  border-radius: 6px;
+  background: #ccc;
+}
+
+.voltar-hoje:hover {
+  background: #bbb;
+}
+
+/* Tabela */
+.tabela-container {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+th, td {
+  border: 1px solid #000;
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background: #ddd;
+  font-weight: bold;
+}
+
+/* Botões principais */
+.botoes-acao {
+  margin-top: 20px;
+}
+
+.botoes-acao button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #060a07;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botoes-acao button:hover {
+  background-color: #6d726e;
+}
+
+button.reserva {
+  background-color: #d3d3d3;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button.reserva:hover {
+  background-color: #c0c0c0;
+}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 320px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.modal input[type="datetime-local"] {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.modal-buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.modal-buttons button:first-child {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.modal-buttons .cancelar {
+  background-color: #dc3545;
+  color: #fff;
+}
