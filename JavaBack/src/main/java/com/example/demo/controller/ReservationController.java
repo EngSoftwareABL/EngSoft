@@ -2,6 +2,8 @@ package com.example.demo.controller;
 
 import com.example.demo.model.Reservation;
 import com.example.demo.repository.ReservationRepository;
+import com.example.demo.model.Vehicle;
+import com.example.demo.repository.VehicleRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +17,7 @@ public class ReservationController {
 
     @Autowired
     private ReservationRepository reservationRepository;
+    private VehicleRepository vehicleRepository;
 
     @GetMapping
     public List<Reservation> getAllReservas() {
