@@ -56,7 +56,6 @@ export class ListaVeiculosComponent implements OnInit {
   }
 
   listaReserva(): void {
-    // Apenas um placeholder por enquanto
     this.router.navigate(['/reserva'])
   }
 

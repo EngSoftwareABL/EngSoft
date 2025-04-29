@@ -14,7 +14,7 @@ public class Vehicle {
     private String placa;
     private Date manut;
     private Float km;
-    private Character status;
+    private Disponibilidade status = Disponibilidade.D;
     private List<String> disponibilidade;
 
     //getters e setters
@@ -55,10 +55,10 @@ public class Vehicle {
     public void setKm(Float km) {
         this.km = km;
     }
-    public Character getStatus() {
+    public Disponibilidade getStatus() {
         return status;
     }
-    public void setStatus(Character status) {
+    public void setStatus(Disponibilidade status) {
         this.status = status;
     }
 }

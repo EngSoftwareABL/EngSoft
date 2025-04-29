@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.Disponibilidade;
 import com.example.demo.model.Reservation;
 import com.example.demo.repository.ReservationRepository;
 import com.example.demo.model.Vehicle;
@@ -33,7 +34,7 @@ public class ReservationController {
         Vehicle veiculo = vehicleRepository.findById(reserva.getIdVeiculo()).orElse(null); // ++ busca veh pelo ID
     
         if (veiculo != null) {  // ++ mudar status para 'R' quando acha o ID
-            veiculo.setStatus('R'); // ++ status 'R' = Reservado
+            veiculo.setStatus(Disponibilidade.R); // ++ status 'R' = Reservado | já alterado para novo modelo da dado
             vehicleRepository.save(veiculo); // ++ salva a atualização
         }
     
