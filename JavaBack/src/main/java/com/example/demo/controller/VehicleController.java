@@ -28,6 +28,48 @@ public class VehicleController {
 
     @PostMapping
     public Vehicle createVehicle(@RequestBody Vehicle vehicle) {
+        //definir próxima inspeção
+        Calendar proxInspecao = Calendar.getInstance();
+        proxInspecao.add(Calendar.MONTH, 3);
+        vehicle.setProximaInspecaoSeguranca(proxInspecao.getTime());
+    
+        //definir próxima revisão
+        if (vehicle.getKm() != null) {
+            float kmAtual = vehicle.getKm();
+            vehicle.setProximaRevisao(kmAtual + 10000);
+        }
+    
         return vehicleRepository.save(vehicle);
     }
+    
+    @GetMapping("/verificacoes")
+public List<String> verificarAgendamentos() {
+    List<Vehicle> todos = vehicleRepository.findAll();
+    List<String> alertas = new ArrayList<>();
+
+    Date hoje = new Date();
+    Calendar limiteInspecao = Calendar.getInstance();
+    limiteInspecao.setTime(hoje);
+    limiteInspecao.add(Calendar.DAY_OF_MONTH, 10); // alerta 10 dias antes
+
+    for (Vehicle v : todos) {
+        // Inspeção
+        if (v.getProximaInspecaoSeguranca() != null &&
+            !v.getProximaInspecaoSeguranca().after(limiteInspecao.getTime())) {
+            alertas.add("Inspeção de segurança próxima para o veículo " + v.getModelo() + " (" + v.getPlaca() + ")");
+        }
+
+        // Revisão
+        if (vehicle.getKm() != null) {
+            float kmAtual = vehicle.getKm();
+            vehicle.setProximaRevisao(kmAtual + 10000);
+        if (kmFaltando <= 800) {
+            alertas.add("Revisão próxima para o veículo " + v.getModelo() + " (" + v.getPlaca() + ")");
+            
+        }        
+    }
+
+    return alertas;
+}
+
 }
