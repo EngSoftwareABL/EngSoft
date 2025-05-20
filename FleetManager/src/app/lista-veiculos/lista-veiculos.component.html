@@ -6,6 +6,12 @@
   </nav>
 </header>
 
+<div *ngIf="alertas.length > 0" class="alertas">
+  <div *ngFor="let alerta of alertas" class="alerta">
+    ⚠️ {{ alerta }}
+  </div>
+</div>
+
 <main class="container">
   <section class="navegacao">
     <button class="acao" (click)="alterarData(-1)">◀</button>

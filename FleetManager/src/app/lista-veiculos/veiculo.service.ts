@@ -27,4 +27,7 @@ export class VeiculoService {
   reservarVeiculos(payload: any): Observable<any> {
     return this.http.post('http://localhost:8080/reservas', payload);
   }
+  getAlertas(): Observable<string[]> {
+    return this.http.get<string[]>('http://localhost:8080/vehicle/verificacoes');
+  }  
 }
