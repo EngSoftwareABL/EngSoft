@@ -18,6 +18,8 @@ public class ReservationController {
 
     @Autowired
     private ReservationRepository reservationRepository;
+
+    @Autowired
     private VehicleRepository vehicleRepository;
 
     @GetMapping
