@@ -12,6 +12,7 @@ public class User {
     private String senha;
     private String telefone;
     private String depto;
+    private String perfil;
 
     // Getters e Setters
     public String getId() { return id; }
@@ -26,4 +27,6 @@ public class User {
     public void setTelefone(String telefone) { this.telefone = telefone; }
     public String getDepto() { return depto; }
     public void setDepto(String depto) { this.depto = depto; }
+    public String getPerfil () {return perfil;}
+    public void setPerfil (String perfil) {this.perfil = perfil;}
 }

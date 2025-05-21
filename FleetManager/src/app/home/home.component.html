@@ -1,13 +1,35 @@
 <body>
-    <header>
-        <a routerLink="/app">Home</a>
-        <a routerLink="/lista">Lista</a>
-        <a routerLink="/reserva">Reserva</a>
-    </header>
-    <main>
-        <div>
-            <p>home page</p>
-        </div>
-        <router-outlet></router-outlet>
-    </main>
+  <header>
+    <nav>
+      <ul>
+        <li><a routerLink="/app" routerLinkActive="active">Home</a></li>
+        <li><a routerLink="/lista" routerLinkActive="active">Lista</a></li>
+        <li><a routerLink="/reserva" routerLinkActive="active">Reserva</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="welcome">
+      <h1>Bem-vindo(a) ao Fleet Manager</h1>
+      <p>Gerencie sua frota com eficiência e simplicidade.</p>
+    </section>
+
+    <section class="features">
+      <div class="feature-card" routerLink="/lista">
+        <h3>📋 Lista de Veículos</h3>
+        <p>Visualize, edite e gerencie todos os veículos cadastrados.</p>
+      </div>
+      <div class="feature-card" routerLink="/reserva">
+        <h3>📝 Reservas</h3>
+        <p>Realize ou consulte reservas de veículos rapidamente.</p>
+      </div>
+      <div class="feature-card" routerLink="/usuarios">
+        <h3>👤 Relatórios</h3>
+        <p>Gerencie e vizualize seus relatórios</p>
+      </div>
+    </section>
+
+    <router-outlet></router-outlet>
+  </main>
 </body>

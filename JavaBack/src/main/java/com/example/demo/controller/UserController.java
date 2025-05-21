@@ -23,21 +23,31 @@ public class UserController {
         return userRepository.findAll();
     }
 
+    @GetMapping("/gestores")
+    public List<User> getGestores() {
+        return userRepository.findByPerfil("GESTOR");
+    }
+
     @PostMapping
     public User createUser(@RequestBody User user) {
+        if (user.getPerfil() == null || user.getPerfil().isBlank()) {
+            user.setPerfil("COMUM"); 
+        }
         return userRepository.save(user);
     }
 
+
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@RequestBody User loginData) {
-    Optional<User> user = userRepository.findByEmailAndSenha(
-        loginData.getEmail(), loginData.getSenha());
+        Optional<User> user = userRepository.findByEmailAndSenha(
+            loginData.getEmail(), loginData.getSenha());
 
-    if (user.isPresent()) {
-        return ResponseEntity.ok(user.get());
-    } else {
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+        if (user.isPresent()) {
+            return ResponseEntity.ok(user.get());
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                              .body("Credenciais inválidas");
+        }
     }
-}
+
 }
