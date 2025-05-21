@@ -16,6 +16,8 @@ public class Vehicle {
     private Float km;
     private Disponibilidade status = Disponibilidade.D;
     private List<String> disponibilidade;
+    private Float proximaRevisao;
+    private Date proximaInspecaoSeguranca;
 
     //getters e setters
     public List<String> getDisponibilidade() {
@@ -61,6 +63,22 @@ public class Vehicle {
     public void setStatus(Disponibilidade status) {
         this.status = status;
     }
+    
+    public Float getProximaRevisao() {
+        return proximaRevisao;
+    }
+    
+    public void setProximaRevisao(Float proximaRevisao) {
+        this.proximaRevisao = proximaRevisao;
+    }
+    
+    public Date getProximaInspecaoSeguranca() {
+        return proximaInspecaoSeguranca;
+    }
+    
+    public void setProximaInspecaoSeguranca(Date proximaInspecaoSeguranca) {
+        this.proximaInspecaoSeguranca = proximaInspecaoSeguranca;
+    }    
 }
 
 
