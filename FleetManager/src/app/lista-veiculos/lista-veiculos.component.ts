@@ -12,6 +12,8 @@ export class ListaVeiculosComponent implements OnInit {
   veiculosDoDia: Veiculo[] = [];
   veiculoSelecionado: boolean[] = [];
 
+  alertas: string[] = [];
+
   dataAtual: Date = new Date();
   mostrarModal = false;
   dataInicioReserva = '';
@@ -23,6 +25,7 @@ export class ListaVeiculosComponent implements OnInit {
 
   ngOnInit(): void {
     this.carregarVeiculos();
+    this.carregarAlertas();
   }
 
   get dataFormatada(): string {
@@ -74,4 +77,15 @@ export class ListaVeiculosComponent implements OnInit {
     this.filtrarVeiculosPorData();
   }
   
+  carregarAlertas(): void {
+    this.veiculoService.getAlertas().subscribe({
+      next: (dados) => {
+        this.alertas = dados;
+      },
+      error: (err) => {
+        console.error('Erro ao carregar alertas:', err);
+      }
+    });
+  }  
+
 }
