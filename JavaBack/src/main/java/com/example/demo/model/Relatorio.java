@@ -2,24 +2,23 @@ package com.example.demo.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import java.util.Date;
 
 @Document(collection = "relatorios")
 public class Relatorio {
-    
     @Id
     private String id;
     private String tipo;
-    private Date dataCriacao;
     private String conteudo;
 
-    // Getters e setters
-    public String getId() {
-        return id;
+    public Relatorio() {}
+
+    public Relatorio(String tipo, String conteudo) {
+        this.tipo = tipo;
+        this.conteudo = conteudo;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public String getId() {
+        return id;
     }
 
     public String getTipo() {
@@ -28,14 +27,6 @@ public class Relatorio {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
-    }
-
-    public Date getDataCriacao() {
-        return dataCriacao;
-    }
-
-    public void setDataCriacao(Date dataCriacao) {
-        this.dataCriacao = dataCriacao;
     }
 
     public String getConteudo() {
