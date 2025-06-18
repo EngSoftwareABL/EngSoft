@@ -1,0 +1,27 @@
+<header>
+    <a routerLink="/app">Home</a>
+    <a routerLink="/lista">Lista</a>
+    <a routerLink="/reserva">Reserva</a>
+    <a routerLink="/dashboard">Dashboard</a>
+</header>
+<div class="container">
+  <h2 style="margin-bottom: 1rem;">Resumo do Sistema</h2>
+  <div class="dashboard-grid">
+    <div class="card">
+      <div class="card-title">Veículos Ociosos</div>
+      <div class="card-value">{{ resumo.veiculosOciosos }}</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Motoristas Ociosos</div>
+      <div class="card-value">{{ resumo.motoristasOciosos }}</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Recomendação</div>
+      <div class="card-value">{{ resumo.recomendacaoReserva }}</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Utilização</div>
+      <div class="card-value">{{ resumo.percentualUtilizacao }}%</div>
+    </div>
+  </div>
+</div>

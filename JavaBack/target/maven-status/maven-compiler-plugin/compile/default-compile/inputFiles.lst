@@ -1,3 +1,4 @@
+C:\Users\leobr\Desktop\Facul\Facens\EngSoftware\EngSoft\JavaBack\src\main\java\com\example\demo\controller\DashboardController.java
 C:\Users\leobr\Desktop\Facul\Facens\EngSoftware\EngSoft\JavaBack\src\main\java\com\example\demo\controller\RelatorioController.java
 C:\Users\leobr\Desktop\Facul\Facens\EngSoftware\EngSoft\JavaBack\src\main\java\com\example\demo\controller\ReservationController.java
 C:\Users\leobr\Desktop\Facul\Facens\EngSoftware\EngSoft\JavaBack\src\main\java\com\example\demo\controller\UserController.java
@@ -14,8 +15,10 @@ C:\Users\leobr\Desktop\Facul\Facens\EngSoftware\EngSoft\JavaBack\src\main\java\c
 C:\Users\leobr\Desktop\Facul\Facens\EngSoftware\EngSoft\JavaBack\src\main\java\com\example\demo\repository\ReservationRepository.java
 C:\Users\leobr\Desktop\Facul\Facens\EngSoftware\EngSoft\JavaBack\src\main\java\com\example\demo\repository\UserRepository.java
 C:\Users\leobr\Desktop\Facul\Facens\EngSoftware\EngSoft\JavaBack\src\main\java\com\example\demo\repository\VehicleRepository.java
+C:\Users\leobr\Desktop\Facul\Facens\EngSoftware\EngSoft\JavaBack\src\main\java\com\example\demo\service\DashboardService.java
 C:\Users\leobr\Desktop\Facul\Facens\EngSoftware\EngSoft\JavaBack\src\main\java\com\example\demo\service\RelatorioService.java
 C:\Users\leobr\Desktop\Facul\Facens\EngSoftware\EngSoft\JavaBack\src\main\java\com\example\demo\service\RelatorioServiceImpl.java
+C:\Users\leobr\Desktop\Facul\Facens\EngSoftware\EngSoft\JavaBack\src\main\java\com\example\demo\strategy\DashboardResumo.java
 C:\Users\leobr\Desktop\Facul\Facens\EngSoftware\EngSoft\JavaBack\src\main\java\com\example\demo\strategy\GeradorRelatorio.java
 C:\Users\leobr\Desktop\Facul\Facens\EngSoftware\EngSoft\JavaBack\src\main\java\com\example\demo\strategy\GerarRelatorioExterno.java
 C:\Users\leobr\Desktop\Facul\Facens\EngSoftware\EngSoft\JavaBack\src\main\java\com\example\demo\strategy\GerarRelatorioInterno.java

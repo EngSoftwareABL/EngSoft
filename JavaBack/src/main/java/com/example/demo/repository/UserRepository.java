@@ -8,6 +8,8 @@ import java.util.Optional;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface UserRepository extends MongoRepository<User, String> {
+    long countByDisponivelTrue();
+
     Optional<User> findByEmailAndSenha(String email, String senha);
     Optional<User> findByEmail(String email);
 

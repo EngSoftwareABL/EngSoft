@@ -13,6 +13,7 @@ public class User {
     private String telefone;
     private String depto;
     private String perfil;
+    private boolean disponivel;
 
     // Getters e Setters
     public String getId() { return id; }
@@ -29,4 +30,6 @@ public class User {
     public void setDepto(String depto) { this.depto = depto; }
     public String getPerfil () {return perfil;}
     public void setPerfil (String perfil) {this.perfil = perfil;}
+    public boolean isDisponivel() { return disponivel; }
+    public void setDisponivel(boolean disponivel) { this.disponivel = disponivel; }
 }

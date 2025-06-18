@@ -12,6 +12,7 @@ body {
     padding: 15px 30px;
     display: flex;
     gap: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
   header a {

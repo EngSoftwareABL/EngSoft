@@ -11,6 +11,8 @@ import { ReservaVeiculoComponent } from './reserva-veiculos/reserva-veiculos.com
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardCardComponent } from './shared/dashboard-card/dashboard-card.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     HomeComponent,
     ListaVeiculosComponent,
-    ReservaVeiculoComponent
+    ReservaVeiculoComponent,
+    DashboardComponent,
+    DashboardCardComponent
   ],
   imports: [
     BrowserModule,
