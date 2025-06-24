@@ -37,4 +37,11 @@ export class LoginComponent {
       }
     });
   }
+
+  loginVisible = false;
+
+  toggleLogin(event: Event): void {
+    event.preventDefault();
+    this.loginVisible = !this.loginVisible;
+  }
 }

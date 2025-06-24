@@ -1,4 +1,35 @@
 <body>
+  <header>
+    <a href="#">Quem Somos</a>
+    <a href="#">Sobre o Site</a>
+    <a href="#" (click)="toggleLogin($event)">Login</a>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+        <h2>Sobre o site</h2>
+      <p>TEXTO GENÉRICO TEXTO GENÉRICO TEXTO<br>
+         GENÉRICO TEXTO GENÉRICO TEXTO<br>
+         GENÉRICO TEXTO GENÉRICO TEXTO</p>
+    </div>
+    <div class="hero-logo">
+      <img src="../../imgs/FleetManagerLogo.png" alt="Logo FleetManager">
+      <h2>FleetManager</h2>
+      <p>Gestão Inteligente de Frotas</p>
+    </div>
+  </section>
+
+  <section class="section-dark">
+    <img src="../../imgs/ford-brasil-nova-geracao-ranger-limited-laranja-jalapao-638245817424104210.png" alt="Veículo">
+    <div class="hero-text">
+        <h2>Quem Somos?</h2>
+      <p>TEXTO GENÉRICO TEXTO GENÉRICO TEXTO<br>
+         GENÉRICO TEXTO GENÉRICO TEXTO<br>
+         GENÉRICO TEXTO GENÉRICO TEXTO</p>
+    </div>
+  </section>
+
+  <section id="login-section" *ngIf="loginVisible">
     <div class="container">
         <div class="login">
             <h1>Fleet Manager</h1>
@@ -20,4 +51,8 @@
             </div>
         </div>
     </div>
+  </section>
+  <footer>
+    Texto de rodapé
+  </footer>
 </body>
