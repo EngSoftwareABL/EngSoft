@@ -30,26 +30,23 @@
   </section>
 
   <section id="login-section" *ngIf="loginVisible">
-    <div class="container">
+    <div *ngIf="loginVisible" class="modal-overlay">
+      <div class="modal-content">
+        <button class="close-btn" (click)="closeLogin()">X</button>
         <div class="login">
-            <h1>Fleet Manager</h1>
-            <div class="loginsys">
-                <form [formGroup]="loginForm" (ngSubmit)="login()">
-                    <div class="id">
-                        <label class="loginTxt" for="typeLogin">Login</label><br>
-                        <input type="text" id="typeLogin" formControlName="email">
-                    </div><br>
-                    <div class="pass">
-                        <label class="passTxt" for="typePass">Senha</label><br>
-                        <input type="password" id="typePass" formControlName="password">
-                    </div><br>
-                    <button type="submit">Entrar</button>
-                </form>
-                <div *ngIf="invalidUser" class="error">
-                    Usuário ou senha inválidos.
-                </div>
-            </div>
+          <h1>Fleet Manager</h1>
+          <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <label for="typeLogin">Login</label>
+            <input id="typeLogin" type="text" formControlName="email" />
+
+            <label for="typePass">Senha</label>
+            <input id="typePass" type="password" formControlName="password" />
+
+            <button type="submit">Entrar</button>
+          </form>
+          <div *ngIf="invalidUser" class="error">Usuário ou senha inválidos.</div>
         </div>
+      </div>
     </div>
   </section>
   <footer>

@@ -42,6 +42,11 @@ export class LoginComponent {
 
   toggleLogin(event: Event): void {
     event.preventDefault();
-    this.loginVisible = !this.loginVisible;
+    this.loginVisible = true;
   }
+
+  closeLogin(): void {
+    this.loginVisible = false;
+  }
+
 }
